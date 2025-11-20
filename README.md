@@ -15,6 +15,8 @@ I'll introduce my idea by this directory：
 - Comparason
   - Loss and Accuracy
   - Parameters
+    - Sigmoid Function
+    - Gauss Function
 - Code
   - The Structure of Project
   - Run Code
@@ -94,6 +96,17 @@ Anyway, Though I can't show the images, but I think everyone knows it *Right?*  
   
 When use **Sigmoid Function** as the activation function, during the training, the **Weight** which in the **Weight Array** will become more and more convergent. At last, even the **Weight** has some changes, the **F(Weight)** won't change much leading to the connection become 'solid'.   
 
-Though the fast convergence make the net display the better convergence during training, and make the accuracy higher. But I think the rapid convergence will caused the model get into a **Local Optimal Solution**. Anyway, using **Sigmoid** as the activation function(*also can call it 'Choose Function'*) is useful accodring my experiment on CIFAR-10, CIFAR-100, Tiny-ImageNet *(also make me poor! (´Д｀))*  
+Though the fast convergence make the net display the better convergence during training, and make the accuracy higher. But I think the rapid convergence will caused the model get into a **Local Optimal Solution**. Anyway, using **Sigmoid** as the activation function(*also can call it 'Choose Function'*) is useful accodring my experiment on CIFAR-10, CIFAR-100, Tiny-ImageNet *(also make me poor and tired! (´Д｀))*  
 
 #### Gauss Function  
+
+Consider the **Sigmoid Function** can make the convergence reach faster but have possibility of getting into local optimal soulution. So, I conceive a new function, **Gauss Function**. The formation of **Gauss Function** is: **$y=e^{-kx^2}$**.  
+
+If you have watched the image of the **Gauss Function**, you will find that the low proporation of the high value dependent variables is perfectly accord with the dynamic connection *(Of cause, it's my opinion.)*. The function's image is sharp making it can give the net more chances to jump out of the local optimal solution.  
+
+But, the disadvantages are obvious, The net's convergence procedure may be **fluctuation-intense**. *(Eh, When I write here, I haven't do the Gauss function experiment. It's expect to be finished when I writing the **Comparason-Parameters-Gauss Function or -Loss and Accuracy**)*.  
+
+## Comparason  
+
+### Loss and Accuracy
+
