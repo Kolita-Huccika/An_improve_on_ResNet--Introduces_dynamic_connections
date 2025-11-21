@@ -1,0 +1,8 @@
+Choose three models into the comparason.
+
+They are:
+	CNN
+	ResNet
+	DResNet(which introduce the dynamic connection)
+
+Those models are 18-layer model, which have total 20 layers including 18-layers' body and one conv-layer and one fc-layer.
