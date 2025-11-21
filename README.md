@@ -1,4 +1,4 @@
-# An-improve-on-ResNet-Introduces-dynamic-connections
+<img width="1920" height="1440" alt="DResNet_acc" src="https://github.com/user-attachments/assets/de1035cd-de55-4537-8d76-25560b1867e6" /># An-improve-on-ResNet-Introduces-dynamic-connections
 When I was learning about ResNet, I realized that the shortcut connections were manually designed. This gave me an idea: why not make the connections dynamic and allow them to "grow" on their own? I call it **DResNet**. *(It's bad that I don't know the DenseNet at that time)*  
 
 So, I introduced a weight array for each layer and designed the connections based on this weight array, allowing the weights to be learned in a way that would enable the connections to "grow" autonomously. Although my teacher said it was useless, it was my first original idea during my student life, so I uploaded it to GitHub.
@@ -19,8 +19,7 @@ I'll introduce my idea by this directory：
     - Each model's training result
       - Train and test, val
   - Parameters
-    - Sigmoid Function
-    - Gauss Function
+  - Activation Function
 - Code
   - The Structure of Project
   - Run Code
@@ -124,4 +123,34 @@ In **Result/Tiny ImageNet**, there're two pictures of **acc.png** and **loss.png
 
 In **loss.png**, the loss of ResNet and my net called **DResNet** goes down fastly, and then goes up near the 25-epoch. And, when the loss is convergent, the ResNet's loss is higher than the CNN, but the DResNet is lower than the ResNet, which means the DResNet can be more convergence after training and ease the problem of the high after-convergent loss.  
 
-In **acc.png**, we can find that the accuracy of the ResNet and the DResNet both are higher than the CNN. And, at 25 epochs, the DResNet has a better convergence performance and the higher accuracy.
+<img width="1920" height="1440" alt="loss" src="https://github.com/user-attachments/assets/488fb8b8-ab64-4605-82ec-26818217aab3" />  
+
+In **acc.png**, we can find that the accuracy of the ResNet and the DResNet both are higher than the CNN. And, at 25 epochs, the DResNet has a better convergence performance and the higher accuracy.  
+
+<img width="1920" height="1440" alt="acc" src="https://github.com/user-attachments/assets/6673dfc3-36f1-4c8c-ae0c-16bfa0915882" />  
+
+#### Each model's training result  
+
+##### Train and test, val  
+
+During the training, Three models are getting higher after the test accuracy become stable. But, the CNN' train acc curve is grow slowly, and the value stops at near **70%**. However, the ResNet and the DResNet stop at 85% and 100%. Eh, the overfitting ability of two models may be *Good?*  
+
+### Parameters  
+
+The parameters of CNN is 11101512, and the parameters of ResNet is 11627272, and the parameters of DResNet is 12320932. Though the dynamic connection is $O(n^2)$, the increment is not much.  
+
+### Activation Function  
+
+The choice of activation function can cause a big difference, *I guess*. If I have time, I'll test the **Gauss Function**.  
+
+## Code  
+
+### The Structure of Project  
+
+The Project will design as three files: **Run.py**, **Model (folder)**, **Result (folder)**.  
+
+The models' code will put in **Model** folder. And the **Result** wil put entire pictures of three models, and the total comparason of **Accuracy** and **Loss**. You can run the code with **Run**.  
+
+### Run Code  
+
+The interface of the comparason is **Run.py**, you can run the code in this file. *(I don't know how to use the Commmand Line to give more choice for users, So I give a main interface directly)*
