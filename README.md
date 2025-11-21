@@ -124,4 +124,4 @@ In **Result/Tiny ImageNet**, there're two pictures of **acc.png** and **loss.png
 
 In **loss.png**, the loss of ResNet and my net called **DResNet** goes down fastly, and then goes up near the 25-epoch. And, when the loss is convergent, the ResNet's loss is higher than the CNN, but the DResNet is lower than the ResNet, which means the DResNet can be more convergence after training and ease the problem of the high after-convergent loss.  
 
-In **acc.png**, 
+In **acc.png**, we can find that the accuracy of the ResNet and the DResNet both are higher than the CNN. And, at 25 epochs, the DResNet has a better convergence performance and the higher accuracy.
