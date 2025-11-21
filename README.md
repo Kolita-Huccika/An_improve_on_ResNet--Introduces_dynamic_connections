@@ -149,9 +149,9 @@ The choice of activation function can cause a big difference, *I guess*. If I ha
 
 ### The Structure of Project  
 
-The Project is structured as three components: **Run.py**, **Model (folder)**, **Result (folder)**.  
+The Project is structured as three components: **Run.py**, **Model (folder)**, **Result (folder)**, **Dataset (folder)**.  
 
-The models' code is placed in **Model** folder. And the **Result** contains all the images for the three models, and the overall comparison of **Accuracy** and **Loss**. You can run the code using **Run.py**.  
+The models' code is placed in **Model** folder. And the **Result** contains all the images for the three models, and the overall comparison of **Accuracy** and **Loss**. The **Dataset** folder stores the file or function about dataset. You can run the code using **Run.py**.  
 
 ### Run Code  
 
