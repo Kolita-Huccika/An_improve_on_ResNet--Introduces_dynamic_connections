@@ -1,5 +1,5 @@
 # An-improve-on-ResNet-Introduces-dynamic-connections
-When I was learning about ResNet, I realized that the shortcut connections were manually designed. This gave me an idea: why not make the connections dynamic and allow them to "grow" on their own? *(Baddly, I don't know the DenseNet at that time)*  
+When I was learning about ResNet, I realized that the shortcut connections were manually designed. This gave me an idea: why not make the connections dynamic and allow them to "grow" on their own? I call it **DResNet**. *(It's bad that I don't know the DenseNet at that time)*  
 
 So, I introduced a weight array for each layer and designed the connections based on this weight array, allowing the weights to be learned in a way that would enable the connections to "grow" autonomously. Although my teacher said it was useless, it was my first original idea during my student life, so I uploaded it to GitHub.
 
@@ -14,6 +14,10 @@ I'll introduce my idea by this directory：
     - Gauss Function
 - Comparason
   - Loss and Accuracy
+    - All models' comparason
+      - Loss and Acc
+    - Each model's training result
+      - Train and test, val
   - Parameters
     - Sigmoid Function
     - Gauss Function
@@ -108,5 +112,16 @@ But, the disadvantages are obvious, The net's convergence procedure may be **flu
 
 ## Comparason  
 
-### Loss and Accuracy
+### Loss and Accuracy  
 
+The each models' independent training result images are stored in **Result/Tiny ImageNet/{model}**. Each file has two images of **{model}_acc** and **{model}_loss**. The model below is 18-layers model, which has one conv-layer,18-layer body and one fc-layer.  
+
+#### All models' comparason  
+
+In **Result/Tiny ImageNet**, there're two pictures of **acc.png** and **loss.png**.  
+
+##### Loss and Acc  
+
+In **loss.png**, the loss of ResNet and my net called **DResNet** goes down fastly, and then goes up near the 25-epoch. And, when the loss is convergent, the ResNet's loss is higher than the CNN, but the DResNet is lower than the ResNet, which means the DResNet can be more convergence after training and ease the problem of the high after-convergent loss.  
+
+In **acc.png**, 
